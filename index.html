@@ -1,156 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CALELECTRO</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #f4f6f8;
-}
-
-header {
-    background: #0a1f44;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    top: 0;
-    left: -50%;
-    background: linear-gradient(120deg, transparent, rgba(0,255,255,0.4), transparent);
-    animation: electric 3s linear infinite;
-}
-
-@keyframes electric {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-.banner {
-    background: #ff6a00;
-    color: white;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.banner p {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scrollAds 12s linear infinite;
-}
-
-@keyframes scrollAds {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.2s;
-    position: relative;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: red;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    border-radius: 5px;
-    animation: float 2s infinite ease-in-out;
-}
-
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.price {
-    color: green;
-    font-weight: bold;
-}
-
-button {
-    background: #ff6a00;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,106,0,0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255,106,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,106,0,0); }
-}
-
-.hidden {
-    display: none;
-}
-
-.phone {
-    margin-top: 10px;
-    font-weight: bold;
-}
-</style>
-</head>
-
-<body>
-
-<div class="banner">
-    <p>⚡ 50% OFF ⚡ FREE DELIVERY ⚡ LIMITED STOCK ⚡ CALL NOW ⚡</p>
-</div>
-
-<header>
-    <h1>⚡ CALELECTRO</h1>
-    <p>Fast Deals. Direct Orders.</p>
-</header>
-
-<div class="products" id="productContainer"></div>
-
 <script>
-
-/* 🔥 CHANGE YOUR NUMBER HERE */
 const PHONE_NUMBER = "0711011011";
 
-/* PRODUCTS (USING .JPG) */
 const products = [
     {name:"SONY PLAYSTATION 5", price:"120,499", img:"IMG13.JPG"},
     {name:"Smart TV", price:"10,499", img:"IMG1.JPG"},
@@ -175,7 +25,7 @@ products.forEach(product => {
 
     card.innerHTML = `
         <div class="badge">HOT</div>
-        <img src="${product.img}">
+        <img src="${product.img}" alt="${product.name}">
         <h3>${product.name}</h3>
         <p class="price">KSh ${product.price}</p>
 
@@ -193,8 +43,4 @@ function showNumber(btn){
     const phone = btn.nextElementSibling;
     phone.classList.toggle("hidden");
 }
-
 </script>
-
-</body>
-</html>
