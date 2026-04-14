@@ -6,15 +6,12 @@
 <title>CALELECTRO</title>
 
 <style>
-
-/* ===== BODY ===== */
 body {
     margin: 0;
     font-family: Arial;
     background: #f4f6f8;
 }
 
-/* ===== HEADER ===== */
 header {
     background: #0a1f44;
     color: white;
@@ -24,7 +21,6 @@ header {
     overflow: hidden;
 }
 
-/* ELECTRIC GLOW EFFECT */
 header::after {
     content: "";
     position: absolute;
@@ -41,7 +37,6 @@ header::after {
     100% { transform: translateX(100%); }
 }
 
-/* ===== MOVING ADS ===== */
 .banner {
     background: #ff6a00;
     color: white;
@@ -60,7 +55,6 @@ header::after {
     100% { transform: translateX(-100%); }
 }
 
-/* ===== PRODUCTS ===== */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -68,7 +62,6 @@ header::after {
     padding: 20px;
 }
 
-/* ===== CARD ===== */
 .card {
     background: white;
     border-radius: 10px;
@@ -83,7 +76,6 @@ header::after {
     transform: scale(1.05);
 }
 
-/* FLOATING BADGE */
 .badge {
     position: absolute;
     top: 10px;
@@ -112,7 +104,6 @@ header::after {
     font-weight: bold;
 }
 
-/* ===== BUTTON ===== */
 button {
     background: #ff6a00;
     color: white;
@@ -130,7 +121,6 @@ button {
     100% { box-shadow: 0 0 0 0 rgba(255,106,0,0); }
 }
 
-/* ===== PHONE ===== */
 .hidden {
     display: none;
 }
@@ -139,15 +129,13 @@ button {
     margin-top: 10px;
     font-weight: bold;
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 MOVING ADS -->
 <div class="banner">
-    <p>⚡ 50% OFF SELECTED ITEMS ⚡ FREE DELIVERY IN NAIROBI ⚡ LIMITED STOCK ⚡ CALL NOW ⚡</p>
+    <p>⚡ 50% OFF ⚡ FREE DELIVERY ⚡ LIMITED STOCK ⚡ CALL NOW ⚡</p>
 </div>
 
 <header>
@@ -159,24 +147,24 @@ button {
 
 <script>
 
-/* 🔥 EDIT THIS ONLY */
+/* 🔥 CHANGE YOUR NUMBER HERE */
 const PHONE_NUMBER = "0711011011";
 
-/* PRODUCTS */
+/* PRODUCTS (USING .JPG) */
 const products = [
-    {name:"SONY PLAYSTATION 5", price:"120,499", img:"IMG13.jpg"},
-    {name:"Smart TV", price:"10,499", img:"IMG1.jpg"},
-    {name:"HP Laptop", price:"34,500", img:"IMG2.jpg"},
-    {name:"Microwave", price:"8,999", img:"IMG3.jpg"},
-    {name:"Fridge", price:"45,000", img:"IMG4.jpg"},
-    {name:"Blender", price:"2,499", img:"IMG5.jpg"},
-    {name:"Kettle", price:"1,800", img:"IMG6.jpg"},
-    {name:"Iron Box", price:"2,200", img:"IMG7.jpg"},
-    {name:"Washing Machine", price:"38,000", img:"IMG8.jpg"},
-    {name:"Cooker", price:"25,000", img:"IMG9.jpg"},
-    {name:"Fan", price:"3,000", img:"IMG10.jpg"},
-    {name:"Sound System", price:"12,000", img:"IMG11.jpg"},
-    {name:"Power Bank", price:"2,000", img:"IMG12.jpg"}
+    {name:"SONY PLAYSTATION 5", price:"120,499", img:"IMG13.JPG"},
+    {name:"Smart TV", price:"10,499", img:"IMG1.JPG"},
+    {name:"HP Laptop", price:"34,500", img:"IMG2.JPG"},
+    {name:"Microwave", price:"8,999", img:"IMG3.JPG"},
+    {name:"Fridge", price:"45,000", img:"IMG4.JPG"},
+    {name:"Blender", price:"2,499", img:"IMG5.JPG"},
+    {name:"Kettle", price:"1,800", img:"IMG6.JPG"},
+    {name:"Iron Box", price:"2,200", img:"IMG7.JPG"},
+    {name:"Washing Machine", price:"38,000", img:"IMG8.JPG"},
+    {name:"Cooker", price:"25,000", img:"IMG9.JPG"},
+    {name:"Fan", price:"3,000", img:"IMG10.JPG"},
+    {name:"Sound System", price:"12,000", img:"IMG11.JPG"},
+    {name:"Power Bank", price:"2,000", img:"IMG12.JPG"}
 ];
 
 const container = document.getElementById("productContainer");
@@ -187,7 +175,7 @@ products.forEach(product => {
 
     card.innerHTML = `
         <div class="badge">HOT</div>
-        <img src="images/${product.img}">
+        <img src="${product.img}">
         <h3>${product.name}</h3>
         <p class="price">KSh ${product.price}</p>
 
